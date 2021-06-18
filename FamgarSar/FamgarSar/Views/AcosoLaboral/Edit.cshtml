@@ -1,0 +1,115 @@
+﻿@model FamgarSar.Models.AcosoLaboral
+
+@{
+    ViewData["Title"] = "Editar Formato";
+}
+
+<h2>Formato De Acoso Laboral</h2>
+<hr />
+
+
+
+
+
+<form asp-action="Edit">
+
+    <div asp-validation-summary="ModelOnly" class=" =" Text-danger></div>
+    <input type="hidden" asp-for="AcosoLaboralId" />
+    <div class="row mb-2">
+        <label asp-for="FechaDiligencionamiento" class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-5">
+            <input asp-for="FechaDiligencionamiento" type="date" value="2021-06-17" min="2021-06-17"
+                   max="2022-06-17" class="form-control" />
+            <span asp-validation-for="FechaDiligencionamiento" class="text-danger"></span>
+        </div>
+    </div>
+    <hr />
+    <p>
+        <h6>FORMATO PARA INTERPONER QUEJAS POR ACOSO LABORAL O PRESENTAR SUGERENCIAS ANTE
+        EL COMITÉ DE CONVIVENCIA LABORAL DE LA EMPRESA COBALSAL LTDA.</h6>
+    </p>
+
+    <hr />
+
+    <div class="row mb-2">
+        <label asp-for="Name" class="col-sm-3 col-form-label">Nombre:(No se aceptan Anónimos)</label>
+        <div class="col-sm-5">
+            <input asp-for="Name" class="form-control" placeholder="Maria" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+    </div>
+    <hr />
+    <div class="row mb-2">
+        <label asp-for="Document" class="col-sm-3 col-form-label"></label>
+        <div>
+            <input asp-for="Document" class="form-control" placeholder="xxxxxxxxxxxxx" />
+            <span asp-validation-for="Document" class="text-danger"></span>
+        </div>
+        <label asp-for="ConCopia" class="col-sm-1 col-form-label"></label>
+        <div>
+            <input asp-for="ConCopia" class="form-control" placeholder="Eje:(2,4,5....)" />
+            <span asp-validation-for="ConCopia" class="text-danger"></span>
+        </div>
+        <label asp-for="NumberTel" class="col-sm-1 col-form-label"></label>
+        <div>
+            <input asp-for="NumberTel" class="form-control" placeholder="Eje:(98658747)" />
+            <span asp-validation-for="NumberTel" class="text-danger"></span>
+        </div>
+    </div>
+    <hr />
+
+    <div class="row mb-2">
+        <label asp-for="Dependence" class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-6">
+            <input asp-for="Dependence" class="form-control" placeholder="Superior.." />
+            <span asp-validation-for="Dependence" class="text-danger"></span>
+        </div>
+    </div>
+    <hr />
+    <div class="row mb-2">
+        <label asp-for="Position" class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-6">
+            <input asp-for="Position" class="form-control" placeholder="Eje:(Empleado,Gerente..)" />
+            <span asp-validation-for="Position" class="text-danger"></span>
+        </div>
+    </div>
+    <hr />
+    <div class="row mb-2">
+        <label asp-for="Email" class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-6">
+            <input asp-for="Email" class="form-control" placeholder="Ejemplo@gmail.com" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <p>
+        <h4>Quejas</h4>
+    </p>
+    <p>
+        <h6>
+            Si usted quiere presentar una queja, diligencie los siguientes espacios.
+            Si va a presentar una sugerencia diligencie sólo el espacio diseñado para ese propósito.
+        </h6>
+    </p>
+
+    <h4><u><u>RELACIÓN DE LOS HECHOS CONSTITUTIVOS DE LA QUEJA:</u></u></h4>
+    <textarea asp-for="Quejas" rows="5" cols="100" placeholder="Escriba su queja..."></textarea>
+
+    <p>
+        <h6>
+            (De ser necesario el commité podrá solicitarle posteriormente la ampliación de la
+            información ofrecida).
+        </h6>
+    </p>
+
+    <div class="form-group">
+        <input type="submit" value="Guardar" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-warning"><i class="fas fa-arrow-circle-left"></i>Regresar</a>
+    </div>
+</form>
+
+
+
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

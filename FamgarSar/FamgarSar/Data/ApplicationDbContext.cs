@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using FamgarSar.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -12,5 +13,7 @@ namespace FamgarSar.Data
             : base(options)
         {
         }
+
+        public DbSet<AcosoLaboral> AcosoLaborals { get; set; }
     }
 }
